@@ -67,7 +67,7 @@ def download_video(base_url, content):
 
     video_file = open(filename, 'wb')
 
-    init_segment = base64.b64decode(video['init_segment'])
+    init_segment = base64.urlsafe_b64decode(video['init_segment'])
     video_file.write(init_segment)
 
     for segment in tqdm(video['segments']):
